@@ -1,0 +1,25 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE hibernate-configuration PUBLIC
+		"-//Hibernate/Hibernate Configuration DTD 3.0//EN"
+		"http://www.hibernate.org/dtd/hibernate-configuration-3.0.dtd">
+<hibernate-configuration>
+	<session-factory>
+			<!-- add credentials for database here -->
+		<property name="hibernate.connection.url"></property>
+		<property name="hibernate.connection.username"></property>
+		<property name="hibernate.connection.password"></property>
+		<property name="hibernate.connection.driver_class">org.postgresql.Driver</property>
+	
+		<property name="hibernate.dialect">org.hibernate.dialect.PostgreSQLDialect</property>
+		<property name="hibernate.hbm2ddl.auto">validate</property>
+		
+		<property name="hibernate.show_sql">true</property>
+		<property name="hibernate.temp.use_jdbc_metadata_defaults">false</property>
+		
+		
+		
+		<mapping class="com.revature.beans.User"/>
+		<mapping class="com.revature.beans.Recipe"/>
+		<mapping class="com.revature.beans.RecipeOfMonth"/>
+	</session-factory>
+</hibernate-configuration>
