@@ -26,7 +26,7 @@ public class RecipeOfMonthRepositoryImpl implements RecipeOfMonthRepository {
 	}
 
 	@Override
-	public RecipeOfMonth getRecipeByMonth(String month) {
+	public RecipeOfMonth getRecipeByMonth(int month) {
 		
 		try(Session s = HibernateUtil.getSession()) {
 			

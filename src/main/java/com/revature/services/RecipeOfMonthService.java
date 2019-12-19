@@ -23,7 +23,7 @@ public class RecipeOfMonthService {
 		return rmr.getRecipesOfMonth();
 	}
 	
-	public RecipeOfMonth getRecipeByMonth(String month) {
+	public RecipeOfMonth getRecipeByMonth(int month) {
 		
 		return rmr.getRecipeByMonth(month);
 	}

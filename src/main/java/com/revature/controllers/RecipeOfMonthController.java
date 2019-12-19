@@ -25,9 +25,9 @@ public class RecipeOfMonthController {
 	}
 	
 	@GetMapping("/{month}")
-	public RecipeOfMonth getRecipeByMonth(@PathVariable("month")String month) {
+	public RecipeOfMonth getRecipeByMonth(@PathVariable("month")int month) {
 		
-		return rms.getRecipeByMonth(month.toLowerCase());
+		return rms.getRecipeByMonth(month);
 	}
 	
 }

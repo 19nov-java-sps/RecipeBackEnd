@@ -27,7 +27,7 @@ public class RecipeController {
 		return rs.getRecipes();
 	}
 	
-	@GetMapping("/userID={user_id}")
+	@GetMapping("/users/{user_id}")
 	public List<Recipe> getRecipesByUserId(@PathVariable("user_id")int user_id) {
 		
 		return rs.getRecipeByUserId(user_id);

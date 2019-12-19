@@ -7,6 +7,6 @@ import com.revature.beans.RecipeOfMonth;
 public interface RecipeOfMonthRepository {
 	
 	public List<RecipeOfMonth> getRecipesOfMonth();
-	public RecipeOfMonth getRecipeByMonth(String month);
+	public RecipeOfMonth getRecipeByMonth(int month);
 	
 }
