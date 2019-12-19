@@ -26,14 +26,14 @@ public class RecipeOfMonth implements Serializable {
 	private String imageUrl;
 	private String sourceUrl;
 	
-	@Column(name="month_name")
-	private String month;
+	@Column(name="month_number")
+	private int month;
 	
 	public RecipeOfMonth() {
 		super();
 	}
-	
-	public RecipeOfMonth(int id, String recipeName, String imageUrl, String sourceUrl, String month) {
+
+	public RecipeOfMonth(int id, String recipeName, String imageUrl, String sourceUrl, int month) {
 		super();
 		this.id = id;
 		this.recipeName = recipeName;
@@ -74,11 +74,11 @@ public class RecipeOfMonth implements Serializable {
 		this.sourceUrl = sourceUrl;
 	}
 
-	public String getMonth() {
+	public int getMonth() {
 		return month;
 	}
 
-	public void setMonth(String month) {
+	public void setMonth(int month) {
 		this.month = month;
 	}
 
@@ -88,7 +88,7 @@ public class RecipeOfMonth implements Serializable {
 		int result = 1;
 		result = prime * result + id;
 		result = prime * result + ((imageUrl == null) ? 0 : imageUrl.hashCode());
-		result = prime * result + ((month == null) ? 0 : month.hashCode());
+		result = prime * result + month;
 		result = prime * result + ((recipeName == null) ? 0 : recipeName.hashCode());
 		result = prime * result + ((sourceUrl == null) ? 0 : sourceUrl.hashCode());
 		return result;
@@ -110,10 +110,7 @@ public class RecipeOfMonth implements Serializable {
 				return false;
 		} else if (!imageUrl.equals(other.imageUrl))
 			return false;
-		if (month == null) {
-			if (other.month != null)
-				return false;
-		} else if (!month.equals(other.month))
+		if (month != other.month)
 			return false;
 		if (recipeName == null) {
 			if (other.recipeName != null)
