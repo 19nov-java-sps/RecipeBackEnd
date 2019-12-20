@@ -3,6 +3,7 @@ package com.revature.controllers;
 import java.util.List;
 
 import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.http.MediaType;
 import org.springframework.web.bind.annotation.CrossOrigin;
 import org.springframework.web.bind.annotation.DeleteMapping;
 import org.springframework.web.bind.annotation.GetMapping;
@@ -36,9 +37,9 @@ public class RecipeController {
 	}
 		
 	@PostMapping
-	public int addRecipe(@RequestBody Recipe r) {
+	public int addRecipe(@RequestBody List<Recipe> recipes) {
 		
-		return rs.addRecipe(r);
+		return rs.addRecipes(recipes);
 	}
 	
 	@DeleteMapping("/{recipe_id}")

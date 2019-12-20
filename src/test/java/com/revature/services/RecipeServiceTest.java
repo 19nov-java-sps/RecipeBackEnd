@@ -53,9 +53,11 @@ public class RecipeServiceTest {
 	public void testingAddingRecipe() {
 		
 		int expected = 1;
-		Recipe r = new Recipe(1,1234,1);
-		when(rr.addRecipe(r)).thenReturn(1);
-		int actual = rs.addRecipe(r);
+		List<Recipe> recipes = new ArrayList<>();
+		recipes.add(new Recipe());
+		recipes.add(new Recipe());
+		when(rr.addRecipes(recipes)).thenReturn(1);
+		int actual = rs.addRecipes(recipes);
 		
 		assertEquals(expected, actual);
 	}

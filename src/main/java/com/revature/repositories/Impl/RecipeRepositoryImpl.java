@@ -46,13 +46,15 @@ public class RecipeRepositoryImpl implements RecipeRepository {
 	}
 
 	@Override
-	public int addRecipe(Recipe r) {
+	public int addRecipes(List<Recipe> recipes) {
 		
 		int recipeCreated = 0;
 		try(Session s = HibernateUtil.getSession()) {
 			
 			Transaction tx = s.beginTransaction();
-			recipeCreated = (int) s.save(r);
+			for(Recipe recipe : recipes) {
+				recipeCreated = (int) s.save(recipe);
+			}
 			tx.commit();
 			return recipeCreated;
 			

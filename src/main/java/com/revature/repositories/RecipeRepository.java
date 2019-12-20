@@ -8,6 +8,6 @@ public interface RecipeRepository {
 	
 	public List<Recipe> getRecipes();
 	public List<Recipe> getRecipesByUserId(int user_id);
-	public int addRecipe(Recipe r);
+	public int addRecipes(List<Recipe> recipes);
 	public void deleteRecipe(int recipe_id);
 }

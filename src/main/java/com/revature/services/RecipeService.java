@@ -28,9 +28,9 @@ public class RecipeService {
 		return rr.getRecipesByUserId(user_id);
 	}
 		
-	public int addRecipe(Recipe r) {
+	public int addRecipes(List<Recipe> recipes) {
 		
-		return rr.addRecipe(r);
+		return rr.addRecipes(recipes);
 	}
 	
 	public void deleteRecipe(int recipe_id) {
