@@ -46,10 +46,13 @@ public class UserServiceTest {
 		assertEquals(us.getUsers().size(),3);
 	}
 	
-//	@Test
-//	public void testGettingUserByUsernameAndPassword() {
-//		
-//		User expected = new User(1, "adonisc", "password");
-//	}
+	@Test
+	public void testGettingUserByUsernameAndPassword() {
+		
+		User expected = new User(1, "adonisc", "password");
+		when(ur.getUserByUsernameAndPassword("adonisc", "password")).thenReturn(new User(1, "adonisc", "password"));
+		User actual = ur.getUserByUsernameAndPassword("adonisc", "password");
+		assertEquals(expected, actual);
+	}
 
 }
