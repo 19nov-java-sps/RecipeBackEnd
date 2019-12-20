@@ -26,19 +26,15 @@ public class RecipeOfMonthRepositoryImpl implements RecipeOfMonthRepository {
 	}
 
 	@Override
-	public RecipeOfMonth getRecipeByMonth(int month) {
+	public List<RecipeOfMonth> getRecipesByMonth(int month) {
 		
 		try(Session s = HibernateUtil.getSession()) {
 			
 			String hql = "from RecipeOfMonth where month = :monthVar";
 			Query<RecipeOfMonth> q = s.createQuery(hql, RecipeOfMonth.class);
 			q.setParameter("monthVar", month);
-			List<RecipeOfMonth> r = q.getResultList();
-			if (r.size() != 0) {
-				return r.get(0);
-			}
-			
-			return null;
+			List<RecipeOfMonth> recipesByMonth = q.getResultList();			
+			return recipesByMonth;
 		}
 	}
 }

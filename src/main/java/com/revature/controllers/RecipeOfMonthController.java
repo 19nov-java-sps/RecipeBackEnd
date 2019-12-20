@@ -12,7 +12,7 @@ import com.revature.beans.RecipeOfMonth;
 import com.revature.services.RecipeOfMonthService;
 
 @RestController
-@RequestMapping("/recipe-of-month")
+@RequestMapping("/recipes-of-month")
 public class RecipeOfMonthController {
 	
 	@Autowired
@@ -25,9 +25,9 @@ public class RecipeOfMonthController {
 	}
 	
 	@GetMapping("/{month}")
-	public RecipeOfMonth getRecipeByMonth(@PathVariable("month")int month) {
+	public List<RecipeOfMonth> getRecipesByMonth(@PathVariable("month")int month) {
 		
-		return rms.getRecipeByMonth(month);
+		return rms.getRecipesByMonth(month);
 	}
 	
 }
