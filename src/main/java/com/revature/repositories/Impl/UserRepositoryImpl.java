@@ -1,5 +1,6 @@
 package com.revature.repositories.Impl;
 
+import java.util.Collections;
 import java.util.List;
 
 import org.hibernate.Session;
@@ -38,7 +39,7 @@ public class UserRepositoryImpl implements UserRepository {
 			if (users.size() != 0) {
 				return users;
 			}
-			return null;
+			return Collections.emptyList();
 		}
 	}
 	

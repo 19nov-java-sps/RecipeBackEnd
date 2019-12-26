@@ -74,17 +74,20 @@ public class User implements Serializable {
 		if (password == null) {
 			if (other.password != null)
 				return false;
-		} else if (!password.equals(other.password))
+		} 
+		else if (!password.equals(other.password))
 			return false;
 		if (username == null) {
 			if (other.username != null)
 				return false;
-		} else if (!username.equals(other.username))
+		} 
+		else if (!username.equals(other.username))
 			return false;
 		if (userrole == null) {
 			if (other.userrole != null)
 				return false;
-		} else if (!userrole.equals(other.userrole))
+		} 
+		else if (!userrole.equals(other.userrole))
 			return false;
 		return true;
 	}

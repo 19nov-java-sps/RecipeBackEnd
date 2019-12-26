@@ -1,5 +1,6 @@
 package com.revature.repositories.Impl;
 
+import java.util.Collections;
 import java.util.List;
 
 import org.hibernate.Transaction;
@@ -25,7 +26,7 @@ public class RecipeRepositoryImpl implements RecipeRepository {
 			if (recipes.size() != 0) {
 				return recipes;
 			}
-			return null;
+			return Collections.emptyList();
 		}
 	}
 	
@@ -41,7 +42,7 @@ public class RecipeRepositoryImpl implements RecipeRepository {
 			if (r.size() != 0) {
 				return r;
 			}
-			return null;
+			return Collections.emptyList();
 		}
 	}
 

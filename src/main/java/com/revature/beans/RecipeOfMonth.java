@@ -108,19 +108,22 @@ public class RecipeOfMonth implements Serializable {
 		if (imageUrl == null) {
 			if (other.imageUrl != null)
 				return false;
-		} else if (!imageUrl.equals(other.imageUrl))
+		} 
+		else if (!imageUrl.equals(other.imageUrl))
 			return false;
 		if (month != other.month)
 			return false;
 		if (recipeName == null) {
 			if (other.recipeName != null)
 				return false;
-		} else if (!recipeName.equals(other.recipeName))
+		} 
+		else if (!recipeName.equals(other.recipeName))
 			return false;
 		if (sourceUrl == null) {
 			if (other.sourceUrl != null)
 				return false;
-		} else if (!sourceUrl.equals(other.sourceUrl))
+		} 
+		else if (!sourceUrl.equals(other.sourceUrl))
 			return false;
 		return true;
 	}
