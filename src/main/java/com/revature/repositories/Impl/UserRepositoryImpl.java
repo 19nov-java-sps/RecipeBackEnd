@@ -7,7 +7,6 @@ import org.hibernate.Transaction;
 import org.hibernate.query.Query;
 import org.springframework.stereotype.Repository;
 
-import com.revature.beans.Recipe;
 import com.revature.beans.User;
 import com.revature.repositories.UserRepository;
 import com.revature.util.HibernateUtil;
