@@ -44,6 +44,7 @@ public class UserService {
 	}
 	
 	public void editUser(User u) {
+		
 		ur.editUser(u);
 	}
 	
