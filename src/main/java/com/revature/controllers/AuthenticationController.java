@@ -28,9 +28,9 @@ public class AuthenticationController {
 		User u = us.getUserByUsernameAndPassword(username, password);
 
 		if (u != null && u.getPassword().equals(password)) {
-			String token = u.getUsername() + ":" + u.getId();
+			String token = u.getUsername() + ":" + u.getId() + ":" +u.getUserrole();
 			response.setStatus(200);
-			response.setHeader("access-control-expose-headers", "Authorization");
+			response.setHeader("access-control-expose-headers", "Authorization");	// check if I need this
 			response.setHeader("Authorization", token);
 		} else {
 			response.setStatus(400);

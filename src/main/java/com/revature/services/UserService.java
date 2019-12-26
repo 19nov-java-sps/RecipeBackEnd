@@ -38,5 +38,14 @@ public class UserService {
 		return ur.getUserByUsernameAndPassword(username, password);
 	}
 	
+	public void deleteUser(int id) {
+		
+		ur.deleteUser(id);
+	}
+	
+	public void editUser(User u) {
+		ur.editUser(u);
+	}
+	
 	
 }

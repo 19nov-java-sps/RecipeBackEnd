@@ -28,7 +28,7 @@ public class UserServiceTest {
 	public void testCreatingUser() {
 		
 		int expected = 1;
-		User u = new User(1, "adonisc", "password");
+		User u = new User(1, "adonisc", "password", "admin");
 		when(ur.createUser(u)).thenReturn(1);
 		int actual = us.createUser(u);
 		assertEquals(expected, actual);
@@ -49,8 +49,8 @@ public class UserServiceTest {
 	@Test
 	public void testGettingUserByUsernameAndPassword() {
 		
-		User expected = new User(1, "adonisc", "password");
-		when(ur.getUserByUsernameAndPassword("adonisc", "password")).thenReturn(new User(1, "adonisc", "password"));
+		User expected = new User(1, "adonisc", "password", "admim");
+		when(ur.getUserByUsernameAndPassword("adonisc", "password")).thenReturn(new User(1, "adonisc", "password", "adnin"));
 		User actual = ur.getUserByUsernameAndPassword("adonisc", "password");
 		assertEquals(expected, actual);
 	}

@@ -29,15 +29,64 @@ public class User implements Serializable {
 	@Column(name="pass_word")
 	private String password;
 	
+	@Column(name="user_role")
+	private String userrole;
+	
 	public User() {
 		super();
 	}
+	
+	public User(int id) {
+		super();
+		this.id = id;
+	}
 
-	public User(int id, String username, String password) {
+	public User(int id, String username, String password, String userrole) {
 		super();
 		this.id = id;
 		this.username = username;
 		this.password = password;
+		this.userrole = userrole;
+	}
+
+	@Override
+	public int hashCode() {
+		final int prime = 31;
+		int result = 1;
+		result = prime * result + id;
+		result = prime * result + ((password == null) ? 0 : password.hashCode());
+		result = prime * result + ((username == null) ? 0 : username.hashCode());
+		result = prime * result + ((userrole == null) ? 0 : userrole.hashCode());
+		return result;
+	}
+
+	@Override
+	public boolean equals(Object obj) {
+		if (this == obj)
+			return true;
+		if (obj == null)
+			return false;
+		if (getClass() != obj.getClass())
+			return false;
+		User other = (User) obj;
+		if (id != other.id)
+			return false;
+		if (password == null) {
+			if (other.password != null)
+				return false;
+		} else if (!password.equals(other.password))
+			return false;
+		if (username == null) {
+			if (other.username != null)
+				return false;
+		} else if (!username.equals(other.username))
+			return false;
+		if (userrole == null) {
+			if (other.userrole != null)
+				return false;
+		} else if (!userrole.equals(other.userrole))
+			return false;
+		return true;
 	}
 
 	public int getId() {
@@ -64,43 +113,20 @@ public class User implements Serializable {
 		this.password = password;
 	}
 
-	@Override
-	public int hashCode() {
-		final int prime = 31;
-		int result = 1;
-		result = prime * result + id;
-		result = prime * result + ((password == null) ? 0 : password.hashCode());
-		result = prime * result + ((username == null) ? 0 : username.hashCode());
-		return result;
+	public String getUserrole() {
+		return userrole;
 	}
 
-	@Override
-	public boolean equals(Object obj) {
-		if (this == obj)
-			return true;
-		if (obj == null)
-			return false;
-		if (getClass() != obj.getClass())
-			return false;
-		User other = (User) obj;
-		if (id != other.id)
-			return false;
-		if (password == null) {
-			if (other.password != null)
-				return false;
-		} else if (!password.equals(other.password))
-			return false;
-		if (username == null) {
-			if (other.username != null)
-				return false;
-		} else if (!username.equals(other.username))
-			return false;
-		return true;
+	public void setUserrole(String userrole) {
+		this.userrole = userrole;
 	}
 
 	@Override
 	public String toString() {
-		return "User [id=" + id + ", username=" + username + ", password=" + password + "]";
+		return "User [id=" + id + ", username=" + username + ", password=" + password + ", userrole=" + userrole + "]";
 	}
+
+	
+	
 	
 }

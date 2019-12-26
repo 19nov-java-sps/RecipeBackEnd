@@ -7,6 +7,7 @@ import org.hibernate.Transaction;
 import org.hibernate.query.Query;
 import org.springframework.stereotype.Repository;
 
+import com.revature.beans.Recipe;
 import com.revature.beans.User;
 import com.revature.repositories.UserRepository;
 import com.revature.util.HibernateUtil;
@@ -72,6 +73,28 @@ public class UserRepositoryImpl implements UserRepository {
 				return u.get(0);
 			}
 			return null;
+		}
+	}
+
+	@Override
+	public void deleteUser(int id) {
+		
+		try(Session s = HibernateUtil.getSession()) {
+			
+			Transaction tx = s.beginTransaction();
+			s.delete(new User(id));
+			tx.commit();
+		}
+		
+	}
+
+	@Override
+	public void editUser(User u) {
+			try(Session s = HibernateUtil.getSession()) {
+			
+			Transaction tx = s.beginTransaction();
+			s.update(u);
+			tx.commit();
 		}
 	}
 
