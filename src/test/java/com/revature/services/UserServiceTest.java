@@ -49,7 +49,7 @@ public class UserServiceTest {
 	@Test
 	public void testGettingUserByUsernameAndPassword() {
 		
-		User expected = new User(1, "adonisc", "password", "admim");
+		User expected = new User(1, "adonisc", "password", "admin");
 		when(ur.getUserByUsernameAndPassword("adonisc", "password")).thenReturn(new User(1, "adonisc", "password", "adnin"));
 		User actual = ur.getUserByUsernameAndPassword("adonisc", "password");
 		assertEquals(expected, actual);
