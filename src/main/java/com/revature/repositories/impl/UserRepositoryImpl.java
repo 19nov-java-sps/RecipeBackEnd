@@ -36,7 +36,7 @@ public class UserRepositoryImpl implements UserRepository {
 			String hql = "from User";
 			Query<User> q = s.createQuery(hql, User.class);
 			List<User> users = q.getResultList();
-			if (users.isEmpty()) {
+			if (!users.isEmpty()) {
 				return users;
 			}
 			return Collections.emptyList();
@@ -69,7 +69,7 @@ public class UserRepositoryImpl implements UserRepository {
 			q.setParameter("usernameVar", username);
 			q.setParameter("passwordVar", password);
 			List<User> u = q.getResultList();
-			if (u.isEmpty()) {
+			if (!u.isEmpty()) {
 				return u.get(0);
 			}
 			return null;

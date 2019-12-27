@@ -23,7 +23,7 @@ public class RecipeRepositoryImpl implements RecipeRepository {
 			String hql = "from Recipe";
 			Query<Recipe> q = s.createQuery(hql, Recipe.class);
 			List<Recipe> recipes = q.getResultList();
-			if (recipes.isEmpty()) {
+			if (!recipes.isEmpty()) {
 				return recipes;
 			}
 			return Collections.emptyList();
@@ -39,7 +39,7 @@ public class RecipeRepositoryImpl implements RecipeRepository {
 			Query<Recipe> q = s.createQuery(hql, Recipe.class);
 			q.setParameter("idVar", user_id);
 			List<Recipe> r = q.getResultList();
-			if (r.isEmpty()) {
+			if (!r.isEmpty()) {
 				return r;
 			}
 			return Collections.emptyList();
