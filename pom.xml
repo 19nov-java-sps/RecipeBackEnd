@@ -8,11 +8,6 @@
   	<properties>
 		<maven.compiler.source>1.8</maven.compiler.source>
 		<maven.compiler.target>1.8</maven.compiler.target>
-		
-		<sonar.projectKey>19nov-java-sps_RecipeBackEnd</sonar.projectKey>
-  		<sonar.organization>19nov-java-sps</sonar.organization>
-  		<sonar.host.url>https://sonarcloud.io</sonar.host.url>
-  		<sonar.login>3da02c3827bb2ab8f07974e357b94925ae5bd839</sonar.login>
 	</properties>
 
 
