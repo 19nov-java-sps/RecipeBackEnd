@@ -1,4 +1,4 @@
-package com.revature.repositories.Impl;
+package com.revature.repositories.impl;
 
 import java.util.Collections;
 import java.util.List;
@@ -23,7 +23,7 @@ public class RecipeRepositoryImpl implements RecipeRepository {
 			String hql = "from Recipe";
 			Query<Recipe> q = s.createQuery(hql, Recipe.class);
 			List<Recipe> recipes = q.getResultList();
-			if (recipes.size() != 0) {
+			if (recipes.isEmpty()) {
 				return recipes;
 			}
 			return Collections.emptyList();
@@ -39,7 +39,7 @@ public class RecipeRepositoryImpl implements RecipeRepository {
 			Query<Recipe> q = s.createQuery(hql, Recipe.class);
 			q.setParameter("idVar", user_id);
 			List<Recipe> r = q.getResultList();
-			if (r.size() != 0) {
+			if (r.isEmpty()) {
 				return r;
 			}
 			return Collections.emptyList();

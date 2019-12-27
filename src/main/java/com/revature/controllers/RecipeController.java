@@ -30,9 +30,9 @@ public class RecipeController {
 	}
 	
 	@GetMapping("/users/{user_id}")
-	public List<Recipe> getRecipesByUserId(@PathVariable("user_id")int user_id) {
+	public List<Recipe> getRecipesByUserId(@PathVariable("user_id")int userId) {
 		
-		return rs.getRecipeByUserId(user_id);
+		return rs.getRecipeByUserId(userId);
 	}
 		
 	@PostMapping
@@ -42,9 +42,9 @@ public class RecipeController {
 	}
 	
 	@DeleteMapping("/{recipe_id}")
-	public void deleteRecipe(@PathVariable(value="recipe_id")int recipe_id) {
+	public void deleteRecipe(@PathVariable(value="recipe_id")int recipeId) {
 		
-		rs.deleteRecipe(recipe_id);
+		rs.deleteRecipe(recipeId);
 	}
 	
 	

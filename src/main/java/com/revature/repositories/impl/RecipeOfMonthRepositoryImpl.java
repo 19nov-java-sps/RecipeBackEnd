@@ -1,4 +1,4 @@
-package com.revature.repositories.Impl;
+package com.revature.repositories.impl;
 
 import java.util.List;
 
@@ -20,8 +20,8 @@ public class RecipeOfMonthRepositoryImpl implements RecipeOfMonthRepository {
 			
 			String hql = "from RecipeOfMonth";
 			Query<RecipeOfMonth> q = s.createQuery(hql, RecipeOfMonth.class);
-			List<RecipeOfMonth> recipes = q.getResultList();
-			return recipes;
+			
+			return q.getResultList();
 		}
 	}
 
@@ -33,8 +33,8 @@ public class RecipeOfMonthRepositoryImpl implements RecipeOfMonthRepository {
 			String hql = "from RecipeOfMonth where month = :monthVar";
 			Query<RecipeOfMonth> q = s.createQuery(hql, RecipeOfMonth.class);
 			q.setParameter("monthVar", month);
-			List<RecipeOfMonth> recipesByMonth = q.getResultList();			
-			return recipesByMonth;
+			
+			return q.getResultList();
 		}
 	}
 }
