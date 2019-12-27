@@ -23,7 +23,7 @@ public class Recipe implements Serializable {
 	@Column(name="recipe_id")
 	private int id;
 	private int apiId;
-	private int userId;
+	private int user_id;
 	
 	public Recipe() {
 		super();
@@ -34,11 +34,11 @@ public class Recipe implements Serializable {
 		this.id = id;
 	}
 
-	public Recipe(int id, int apiId, int userId) {
+	public Recipe(int id, int apiId, int user_id) {
 		super();
 		this.id = id;
 		this.apiId = apiId;
-		this.userId = userId;
+		this.user_id = user_id;
 	}
 
 	public int getId() {
@@ -57,12 +57,12 @@ public class Recipe implements Serializable {
 		this.apiId = apiId;
 	}
 
-	public int getUserId() {
-		return userId;
+	public int getUser_id() {
+		return user_id;
 	}
 
-	public void setUserId(int userId) {
-		this.userId = userId;
+	public void setUser_id(int user_id) {
+		this.user_id = user_id;
 	}
 
 	@Override
@@ -71,7 +71,7 @@ public class Recipe implements Serializable {
 		int result = 1;
 		result = prime * result + apiId;
 		result = prime * result + id;
-		result = prime * result + userId;
+		result = prime * result + user_id;
 		return result;
 	}
 
@@ -88,14 +88,14 @@ public class Recipe implements Serializable {
 			return false;
 		if (id != other.id)
 			return false;
-		if (userId != other.userId)
+		if (user_id != other.user_id)
 			return false;
 		return true;
 	}
 
 	@Override
 	public String toString() {
-		return "Recipe [id=" + id + ", apiId=" + apiId + ", userId=" + userId + "]";
+		return "Recipe [id=" + id + ", apiId=" + apiId + ", user_id=" + user_id + "]";
 	}
 
 }
